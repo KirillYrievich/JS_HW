@@ -22,5 +22,9 @@
 Уточнение: Пользователь всегда вводит корректное положительное целое число.
 Подсказка: Возможно, вам понадобится округление чисел и оператор %.
 */
+const integerNumber = +prompt("Введите целое число: ");
+const hundred = Math.trunc(integerNumber / 100 % 10);
+const ten = Math.trunc(integerNumber / 10 % 10);
+const unit = Math.trunc(integerNumber % 10);
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+console.log(`В числе ${integerNumber} количество сотен: ${hundred}, десятков: ${ten}, единиц: ${unit}`);
