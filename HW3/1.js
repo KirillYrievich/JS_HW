@@ -7,6 +7,7 @@
 который получаем от функции, в консоль.
 */
 
+
 function cubeOfNumber(n) {
     return function () {
         return n ** 3;

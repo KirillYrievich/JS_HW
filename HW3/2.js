@@ -9,6 +9,7 @@
 сообщение "Размер заработной платы за вычетом налогов равен N."
 */
 
+
 const userNumber = +prompt('Введите число: ', 0);
 
 function comparing(userSalary) {
@@ -25,3 +26,4 @@ function tax(money) {
 };
 
 comparing(userNumber);
+

@@ -10,6 +10,7 @@
 три числа. Проверять их не нужно.
 */
 
+
 const userNumber1 = +prompt('Введите первое число: ', 0);
 const userNumber2 = +prompt('Введите второе число: ', 0);
 const userNumber3 = +prompt('Введите третье число: ', 0);
@@ -20,3 +21,4 @@ function comparing(a, b, c) {
 };
 
 comparing(userNumber1, userNumber2, userNumber3);
+
