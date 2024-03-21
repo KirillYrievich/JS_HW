@@ -17,4 +17,14 @@ const ru = [
   "воскресенье",
 ];
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+function mainFunction(en, ru) {
+  const result = {};
+
+  en.forEach((item, index) => {
+    result[item] = ru[index];
+  });
+
+  return result;
+}
+
+console.log(mainFunction(en, ru));
