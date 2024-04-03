@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="from" type="text">
+    В инпуте написано: <span></span>
+
+    <br>
+
+    <button class="messageBtn">Показать блок</button>
+    <div class="message">
+        Привет :)
+    </div>
+    <br>
+    <form>
+        <label>
+            Первый инпут:
+            <input class="form-control" type="text">
+        </label>
+        <br>
+        <br>
+        <label>
+            Второй инпут:
+            <select class="form-control">
+            <option value=""></option>
+            <option value="1">Один</option>
+            <option value="2">Два</option>
+            </select>
+        </label>
+        <br>
+        <br>
+        <button>Отправить</button>
+
+    </form>
+    <script>
+        "use strick";
+        //1. При изменении значения в input с id="from", значение содержащееся в нем должно моментально отображаться в span. То есть при печати в input'е тег span также должен меняться.
+        (function firstEx() {
+            const inpurEl = document.querySelector('input');
+            const spanEl = document.querySelector('span');
+
+            inpurEl.addEventListener('input', function (e) {
+                spanEl.textContent = e.target.value;
+            });
+        })();
+        
+        // 2. При клике на кнопку с классом messageBtn необходимо элементу с классом message:
+        //     - добавить два класса: animate_animated и animate_fadeInLeftBig
+        //     - поставить данному элементу стиль visibility в значение 'visible'.
+    
+        (function secondEx() {
+
+            const buttonEl = document.querySelector('.messageBtn');
+            const divEl = document.querySelector('.message');
+            divEl.style.visibility = 'hidden';
+
+            buttonEl.addEventListener('click', function (e) {
+                divEl.classList.add('_animated', 'animate_fadeInLeftBig');
+                divEl.style.visibility = 'visible';
+            });
+        })();
+        
+        //3. Необходимо при отправке формы проверить, заполнены ли все поля в этой форме. Если какое-либо поле не заполнено, форма не должна отправляться, также должны быть подсвечены незаполненные поля (необходимо поставить класс error незаполненным полям). Как только пользователь начинает заполнять какое-либо поле, необходимо, при вводе в данное поле, произвести проверку:
+            // - Если поле пустое, необходимо данное поле подсветить (поставить класс error данному полю).
+            // - Если поле было чем-либо заполнено, подсветку (класс error) необходимо убрать.
+    
+        (function thirdEx() {
+            const formEl = document.querySelector('form');
+            const buttonEl = formEl.querySelector('button');
+            buttonEl.type = 'submit';
+            const inputEls = formEl.querySelectorAll('.form-control');
+
+            formEl.addEventListener('submit', function (e) {
+                e.preventDefault();
+                inputEls.forEach(element => {
+                    if (element.value === ''){
+                        element.placeholder = 'Заполните поле';
+                        element.classList.add('error');
+                        element.style.border= '2px solid red';
+                    } else {
+                        element.classList.remove('error');
+                        element.style.border= '2px solid green';
+                    };
+                });
+                if (inputEls[0].classList.contains('error') || inputEls[1].classList.contains('error')) {
+                    console.log('Форма не отправлена');
+                } else {
+                    console.log('Форма  отправлена');
+                };
+            });
+        })();
+    
+    </script>
+</body>
+</html>
