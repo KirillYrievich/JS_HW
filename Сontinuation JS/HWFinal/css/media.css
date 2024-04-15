@@ -1,0 +1,235 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@media (max-width: 1024px) {
+    .logo {
+        padding-left: 20px;
+    }
+
+    .user-buttons {
+        padding-right: 20px;
+    }
+
+    .center {
+        padding-left: calc(50% - 992px / 2);
+        padding-right: calc(50% - 992px / 2);
+    }
+
+    .hero-img {
+        width: 50%;
+    }
+
+    .hero-text-head {
+        font-size: 44px;
+    }
+
+    .hero-text-midle {
+        font-size: 24px;
+    }
+
+    .products-items {
+        grid-template-columns: repeat(auto-fill, 360px);
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .center {
+        padding-left: calc(50% - 736px / 2);
+        padding-right: calc(50% - 736px / 2);
+    }
+
+    .hero {
+        height: 100vh;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .hero-img {
+        width: 50%;
+    }
+
+    .hero-text-head {
+        font-size: 44px;
+    }
+
+    .hero-text-midle {
+        font-size: 24px;
+    }
+
+    .mobile-none {
+        display: none;
+    }
+
+    .proposals {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-bottom: 32px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 19px;
+    }
+
+    .proposals-item-img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .proposals-item-big img {
+        min-height: 111px;
+    }
+
+    .products-items {
+        grid-template-columns: repeat(auto-fill, 360px);
+        gap: 16px;
+    }
+
+    .options {
+        gap: 48px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 48px 0 48px 0;
+    }
+
+    .option-item {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .subscrybe {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+        justify-content: unset;
+        gap: 48px;
+
+        padding-top: 64px;
+        padding-bottom: 140px;
+    }
+}
+
+@media (max-width: 425px) {
+    .center {
+        padding-left: calc(50% - 343px / 2);
+        padding-right: calc(50% - 343px / 2);
+    }
+
+    .subscrybe {
+        padding-bottom: 109px;
+        min-height: 0;
+        background-position: 27%;
+    }
+
+    .subscrybe-paragraf {
+        font-size: 18px;
+    }
+
+    .subscrybe-form-text {
+        line-height: 1.5;
+    }
+
+    .subscrybe-form-paragraf {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-text-head {
+        font-size: 38px;
+    }
+
+    .hero-text-midle {
+        font-size: 20px;
+    }
+
+    .products {
+        padding-top: 32px;
+        gap: 0;
+    }
+
+    .products-title {
+        gap: 3px;
+        padding-bottom: 64px;
+    }
+
+    .products-title-text {
+        text-align: center;
+    }
+
+    .products-items {
+        grid-template-columns: repeat(auto-fill, 328px);
+        gap: 16px;
+    }
+
+    .products-button {
+        padding-top: 40px;
+    }
+
+    .subscrybe-form-text {
+        line-height: 1.5;
+    }
+
+    .subscrybe-paragraf {
+        font-size: 18px;
+    }
+
+
+    .subscrybe-form-paragraf {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .forms {
+        margin-top: 22px;
+    }
+
+    .footer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        gap: 40px;
+
+        padding-top: 43px;
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .center {
+        padding-left: calc(50% - 320px / 2);
+        padding-right: calc(50% - 320px / 2);
+    }
+
+    .products-items {
+        grid-template-columns: repeat(auto-fill, 320px);
+    }
+}

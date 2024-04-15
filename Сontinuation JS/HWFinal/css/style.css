@@ -1,0 +1,613 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-style: normal;
+    line-height: normal;
+    font-weight: 400;
+    font-family: 'Lato';
+    font-size: 14px;
+}
+
+
+.center {
+    padding-left: calc(50% - 1140px / 2);
+    padding-right: calc(50% - 1140px / 2);
+}
+
+.main-header {
+    background-color: #222;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    min-height: 75px;
+}
+
+.logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 41px;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.logo:hover svg path {
+    fill: #F16D7F;
+}
+
+.user-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 31px;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.menu:hover path {
+    fill: #F16D7F;
+}
+
+.profile:hover path {
+    fill: #F16D7F;
+}
+
+.store:hover path {
+    fill: #F16D7F;
+}
+
+/* Главный блок */
+.hero {
+    margin-bottom: 64px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 64px;
+    padding-left: calc(50% - 1600px / 2);
+    padding-right: calc(50% - 1600px / 2);
+    background: #F1E4E6;
+}
+
+.hero-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-bottom: 96px;
+}
+
+.hero-text {
+    border-left: 12px solid #F16D7F;
+    padding-left: 16px;
+}
+
+.hero-text-head {
+    color: #222;
+    font-family: 'Lato';
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.hero-text-midle {
+    color: #222;
+    font-family: 'Lato';
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.hero-text-red {
+    color: #F16D7F;
+}
+
+/* Блок предложения и скидки */
+.proposals {
+    display: -ms-grid;
+    display: grid;
+    gap: 30px;
+    -ms-grid-columns: 1fr 30px 1fr 30px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 48px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.proposals-item {
+    background: rgba(33, 22, 22, 0.70);
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: -webkit-transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
+.proposals-item-img {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+}
+
+.proposals-item:hover {
+    -webkit-transform: translateY(-1.1%);
+    -ms-transform: translateY(-1.1%);
+    transform: translateY(-1.1%);
+}
+
+.proposals-item-big {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+}
+
+.proposal-item-text {
+    /* ставим абсолют туда куда хотим повесить картину */
+    position: absolute;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lato';
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.proposal-item-red {
+    color: #F16D7F;
+    font-family: 'Lato';
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Блок продукты */
+.products {
+    padding-top: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 49px;
+}
+
+.products-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.products-item img {
+    width: 100%;
+}
+
+.products-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.products-title-head {
+    color: #222;
+    font-family: 'Lato';
+    font-size: 30px;
+}
+
+.products-title-text {
+    color: #9F9F9F;
+    font-family: 'Lato';
+    font-size: 14px;
+}
+
+.products-items {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 360px);
+    gap: 24px;
+}
+
+.products-img {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.products-img:hover {
+    background-color: rgba(58, 56, 56, 0.86);
+    -webkit-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+/* темный фон, карточка add button */
+.products-card-img {
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+}
+
+.products-card-button {
+    position: absolute;
+    text-decoration: none;
+
+    color: #FFF;
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    text-align: center;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 10px;
+
+    -webkit-transition: all 0.5s ease-in;
+
+    -o-transition: all 0.5s ease-in;
+
+    transition: all 0.5s ease-in;
+    display: none;
+}
+
+.products-item:hover .products-card-button {
+    display: initial;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.products-card-button:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.products-item-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 16px;
+    background-color: #F8F8F8;
+}
+
+.products-item-head {
+    color: #000;
+    font-family: 'Lato';
+    font-size: 13px;
+}
+
+.products-item-paragraf {
+    color: #5D5D5D;
+    font-family: 'Lato';
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.products-item-price {
+    color: #F16D7F;
+    font-family: 'Lato';
+    font-size: 16px;
+}
+
+/* кнопка для всех товаров */
+.products-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.products-button-style {
+    border: 1px solid #FF6A6A;
+    background: #FFF;
+    display: block;
+
+    color: #F26376;
+    font-family: 'Lato';
+    font-size: 16px;
+    padding: 15px 39px;
+    margin-bottom: 60px;
+}
+
+/* кнопка показать все товары */
+.products-button-style:hover {
+    background: #FF6A6A;
+    color: #fff;
+}
+
+/* следующий блок черный отступ top должен быть 36 */
+/* блок options */
+.options {
+    margin-top: 36px;
+    background-color: #222224;
+    min-height: 341px;
+    padding-left: calc(50% - 1600px / 2);
+    padding-right: calc(50% - 1600px / 2);
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.option-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 17px;
+    padding-top: 104px;
+    padding-bottom: 104px;
+    max-width: 360px;
+}
+
+.option-head {
+    color: #FBFBFB;
+    font-family: 'Lato';
+    font-size: 19.96px;
+}
+
+.option-paragraf {
+    color: #FBFBFB;
+    text-align: center;
+    font-family: 'Lato';
+    font-size: 13.972px;
+    font-weight: 300;
+    max-width: 82%;
+}
+
+/* блок subscrybe */
+.subscrybe {
+    background-image: url(../img/subs.png);
+    background-color: rgba(244, 244, 244, 0.70);
+    background-blend-mode: overlay;
+    background-size: cover;
+    min-height: 448px;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.subscrybe-comment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.subscrybe-paragraf {
+    color: #222224;
+    text-align: center;
+    font-family: 'Lato';
+    font-size: 20px;
+    max-width: 360px;
+}
+
+.subscrybe-comment-span {
+    color: #222224;
+    font-family: 'Lato';
+    font-size: 20px;
+    font-style: italic;
+}
+
+.subscrybe-form-text {
+    color: #222224;
+    text-align: center;
+    font-family: 'Lato';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.subscrybe-form-paragraf {
+    color: #222224;
+    font-family: 'Lato';
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.forms {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.forms input {
+    padding: 17px 150px 32px 20px;
+    color: #222224;
+    font-family: 'Lato';
+    font-size: 14px;
+
+    outline: none;
+    border: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: #E1E1E1;
+}
+
+.forms button {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lato';
+    font-size: 14px;
+
+    padding: 16px 22px;
+    background-color: #F16D7F;
+    border: none;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    -webkit-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+.forms:hover button {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* блок footer */
+.footer {
+    min-height: 79px;
+    background-color: #222224;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.footer-copy {
+    color: #FBFBFB;
+    font-family: 'Lato';
+    font-size: 16px;
+}
+
+.social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 7px;
+}
+
+.social-item {
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+
+.social-item:hover {
+    background-color: #F16D7F;
+}
+
+.social-item:hover svg path {
+    fill: #fff;
+}
+
+.none {
+    display: none;
+}
