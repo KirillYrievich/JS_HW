@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interno</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="header__inner container">
+                <a class="header__logo logo" href="/">
+                    <img class="logo__image" src="./images/icons/logo.svg" alt="Interno" width="34" height="34"
+                        loading="lazy" />
+                    <h4 class="logo__title">Interno</h4>
+                </a>
+                <nav class="header__menu hidden-mobile">
+                    <ul class="header__menu-list">
+                        <li v-for="menu in menubar.menuItems" :key="menu.label" class="header__menu-item">
+                            <a class="header__menu-link" :href="menu.href">{{ menu.label }}</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header__burger-menu burger-button visible-mobile" type="button"
+                    onclick="mobileOverlay.showModal()">
+                    <span class="visually-hidden">Open navigation menu</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="page-header page-header__project-bg"></main>
+
+        <section class="section container section__column">
+            <div class="section__wrapper">
+                <div class="section__body">
+                    <div v-for="item in filteredNews" :key="item.id" class="project">
+                        <h3 class="project__title">{{ item.title }}</h3>
+                        <article class="project__article">
+                            <img class="project__image" :src="item.image" alt="maket" loading="lazy" width="799"
+                                height="539">
+                            <div class="project__description">
+                                <p class="project__date">{{ item.date }}</p>
+                                <ul class="project__breadcrumbs breadcrumbs">
+                                    <li v-for="item in item.tags" :key="item.id">
+                                        {{ item }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                        <p class="project__text">{{ item.text }}</p>
+                        <article v-if="item.quote" class="quotes">
+                            <img class="quotes__marks" src="./images/icons/marks.svg" alt="marks" loading="lazy"
+                                width="" height="">
+                            <p class="quotes__text">{{ item.quote }}</p>
+                        </article>
+                        <div v-if="item.subnew">
+                            <h3 class="project__title">{{ item.subnew.title }}</h3>
+                            <p class="project__text">{{ item.subnew.text }}</p>
+                            <ol class="project__list">
+                                <li v-for="item in item.subnew.ol" :key="item.id" class="project__item">{{ item }}</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section__tags">
+                <div class="tags">
+                    <h5 class="tags__title">Тэги</h5>
+                    <ul class="tags__list">
+                        <li v-for="item in tags" :key="item">
+                            <button :class="{ 'tags__active': news.selectedTag === item }" @click="filterByTag(item)"
+                                class="tags__button button">{{ item }}</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer__inner container grid grid--3">
+                <div class="header__logo logo">
+                    <img class="logo__image" src="./images/icons/logo.svg" alt="Interno" width="34" height="34"
+                        loading="lazy" />
+                    <h4 class="logo__title">Interno</h4>
+                </div>
+                <nav class="footer__menu">
+                    <h5 class="footer__menu-title">Страницы</h5>
+                    <ul class="footer__menu-list">
+                        <li v-for="menu in menubar.menuItems" :key="menu.label" class="footer__menu-item">
+                            <a class="footer__menu-link" :href="menu.href">{{ menu.label }}</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer__contacts">
+                    <h5 class="footer__menu-title">Контакты</h5>
+                    <ul class="footer__menu-list">
+                        <li class="footer__contacts-item">55 East Birchwood Ave. Brooklyn, New York 11201</li>
+                        <li class="footer__contacts-item">contact@interno.com</li>
+                        <li class="footer__contacts-item">(123) 456 - 7890</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
+            <form class="mobile-overlay__close-button-wrapper" method="dialog">
+                <button class="mobile-overlay__close-button cross-button" type="submit">
+                    <span class="visually-hidden">Закрыть меню</span>
+                </button>
+            </form>
+            <div class="mobile-overlay__body">
+                <ul class="mobile-overlay__list">
+                    <li v-for="menu in menubar.menuItems" :key="menu.label" class="mobile-overlay__item">
+                        <a class="mobile-overlay__link" :href="menu.href">{{ menu.label }}</a>
+                    </li>
+                </ul>
+            </div>
+        </dialog>
+    </div>
+
+    <script>
+        const app = {
+            data() {
+                return {
+                    news: {
+                        articles: [
+                            {
+                                id: 1,
+                                title: 'Создадим лучший макет перепланировки',
+                                date: '26 Декабрь, 2022',
+                                tags: ['Кухня', 'Спальня'],
+                                image: './images/maket1.png',
+                                text: 'В своей статье от 1994-го года журнал «Before & After» отследил фразу «Lorem ipsum ...» до философского трактата Цицерона О пределах добра и зла, написанного в 45 году до нашей эры на латинском языке. <br> В оригинале текст выглядит так «Neque porroquisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit ...», и переводится как «Нет никого, кто любил бы свою боль, кто искал бы ее и хотел бы чтобы она была у него. Потому что это боль...»',
+                                quote: 'Какая-то умная и красивая цитата',
+                                subnew: {
+                                    title: 'Дизайн-спринт - это здорово',
+                                    text: 'В оригинале текст выглядит так «Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit ...», и переводится как «Нет никого, кто любил бы свою боль, кто искал бы ее и хотел бы чтобы она была у него. Потому что это боль...»',
+                                    ol: [
+                                        'С того времени этот, похожий на латинский, текст стал стандартом в печатной промышленности для примеров шрифтов и текстов.',
+                                        'С того времени этот, похожий на латинский, текст стал стандартом в печатной промышленности для примеров шрифтов и текстов.',
+                                        'С того времени этот, похожий на латинский, текст стал стандартом в печатной промышленности для примеров шрифтов и текстов.'
+                                    ],
+                                }
+                            },
+                            {
+                                id: 2,
+                                title: 'Новость 2',
+                                date: '26 Декабрь, 2022',
+                                tags: ['Здание', 'Архитектура'],
+                                image: './images/maket2.png',
+                                text: 'В своей статье от 1994-го года журнал «Before & After» отследил фразу «Lorem ipsum ...» до философского трактата Цицерона О пределах добра и зла, написанного в 45 году до нашей эры на латинском языке.',
+                                quote: '',
+                                subnew: {}
+                            },
+                            {
+                                id: 3,
+                                title: 'Новость 3',
+                                date: '26 Декабрь, 2022',
+                                tags: ['Кухня', 'Архитектура'],
+                                image: './images/maket1.png',
+                                text: 'В своей статье от 1994-го года журнал «Before & After» отследил фразу «Lorem ipsum ...» до философского трактата Цицерона О пределах добра и зла, написанного в 45 году до нашей эры на латинском языке.',
+                                quote: '',
+                                subnew: {}
+                            },
+                            {
+                                id: 4,
+                                title: 'Новость 4',
+                                date: '26 Декабрь, 2022',
+                                tags: ['Здание', 'Архитектура'],
+                                image: './images/maket2.png',
+                                text: 'В своей статье от 1994-го года журнал «Before & After» отследил фразу «Lorem ipsum ...» до философского трактата Цицерона О пределах добра и зла, написанного в 45 году до нашей эры на латинском языке.',
+                                quote: '',
+                                subnew: {}
+                            },
+                            {
+                                id: 5,
+                                title: 'Новость 5',
+                                date: '26 Декабрь, 2022',
+                                tags: ['Здание', 'Спальня'],
+                                image: './images/maket1.png',
+                                text: 'В своей статье от 1994-го года журнал «Before & After» отследил фразу «Lorem ipsum ...» до философского трактата Цицерона О пределах добра и зла, написанного в 45 году до нашей эры на латинском языке.',
+                                quote: '',
+                                subnew: {}
+                            },
+                            {
+                                id: 6,
+                                title: 'Новость 6',
+                                date: '26 Декабрь, 2022',
+                                tags: ['Спальня', 'Планировка'],
+                                image: './images/maket2.png',
+                                text: 'В своей статье от 1994-го года журнал «Before & After» отследил фразу «Lorem ipsum ...» до философского трактата Цицерона О пределах добра и зла, написанного в 45 году до нашей эры на латинском языке.',
+                                quote: '',
+                                subnew: {}
+                            },
+                            {
+                                id: 7,
+                                title: 'Новость 7',
+                                date: '26 Декабрь, 2022',
+                                tags: ['Здание', 'Кухня'],
+                                image: './images/maket1.png',
+                                text: 'В своей статье от 1994-го года журнал «Before & After» отследил фразу «Lorem ipsum ...» до философского трактата Цицерона О пределах добра и зла, написанного в 45 году до нашей эры на латинском языке.',
+                                quote: '',
+                                subnew: {}
+                            },
+                            {
+                                id: 8,
+                                title: 'Новость 8',
+                                date: '26 Декабрь, 2022',
+                                tags: ['Планировка', 'Архитектура'],
+                                image: './images/maket2.png',
+                                text: 'В своей статье от 1994-го года журнал «Before & After» отследил фразу «Lorem ipsum ...» до философского трактата Цицерона О пределах добра и зла, написанного в 45 году до нашей эры на латинском языке.',
+                                quote: '',
+                                subnew: {}
+                            },
+                            {
+                                id: 9,
+                                title: 'Новость 9',
+                                date: '26 Декабрь, 2022',
+                                tags: ['Кухня', 'Архитектура'],
+                                image: './images/maket1.png',
+                                text: 'В своей статье от 1994-го года журнал «Before & After» отследил фразу «Lorem ipsum ...» до философского трактата Цицерона О пределах добра и зла, написанного в 45 году до нашей эры на латинском языке.',
+                                quote: '',
+                                subnew: {}
+                            },
+                            {
+                                id: 10,
+                                title: 'Новость 10',
+                                date: '26 Декабрь, 2022',
+                                tags: ['Спальня', 'Планировка'],
+                                image: './images/maket2.png',
+                                text: 'В своей статье от 1994-го года журнал «Before & After» отследил фразу «Lorem ipsum ...» до философского трактата Цицерона О пределах добра и зла, написанного в 45 году до нашей эры на латинском языке.',
+                                quote: '',
+                                subnew: {}
+                            },
+                        ],
+                        currentArticle: null,
+                        selectedTag: null
+                    },
+                    links: [
+                        {
+                            label: 'Интерьер',
+                            link: '#',
+                        },
+                        {
+                            label: 'Домой',
+                            link: './index.html',
+                        },
+                        {
+                            label: 'Декор',
+                            link: '#'
+                        }
+                    ],
+                    menubar: {
+                        menuItems: [
+                            { label: 'Домой', href: './' },
+                            { label: 'Проект', href: './project.html' },
+                            { label: 'Блог', href: './blog.html' }
+                        ]
+                    },
+                }
+            },
+            computed: {
+                tags() {
+                    return [...new Set(this.news.articles.flatMap(a => a.tags))];
+                },
+                filteredNews() {
+                    return this.news.selectedTag
+                        ? this.news.articles.filter(a => a.tags.includes(this.news.selectedTag))
+                        : this.news.articles;
+                }
+            },
+            created() {
+                this.news.currentArticle = this.news.articles[0];
+            },
+            methods: {
+                filterByTag(tag) {
+                    this.news.selectedTag = tag;
+                }
+            }
+        }
+        Vue.createApp(app).mount('#app')
+    </script>
+</body>
+
+</html>

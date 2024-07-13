@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interno</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="resource/layouts/layout.js"></script>
+    <script src="resource/components/hero.js"></script>
+    <script src="resource/components/modern.js"></script>
+    <script src="resource/components/news.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <layout>
+            <main class="content">
+                <section class="section container">
+                    <div class="section__body">
+                        <hero></hero>
+                    </div>
+                </section>
+            </main>
+
+            <section class="section container">
+                <header class="section__header">
+                    <h3 class="section__title">Следите за нашими проектами</h3>
+                    <div class="section__description">
+                        <p>Хорошо известно, что читатель будет отвлекаться на читабельный контент страницы</p>
+                    </div>
+                </header>
+                <div class="section__body">
+                    <modern :modern_card="modernCard"></modern>
+                </div>
+            </section>
+
+            <aside class="experiance">
+                <section class="section container">
+                    <div class="section__body">
+                        <div class="experiance">
+                            <ul class="experiance__list">
+                                <li class="experiance__item">
+                                    <h1 class="experiance__title">12</h1>
+                                    <p class="experiance__text">Лет опыта</p>
+                                </li>
+                                <li class="experiance__item">
+                                    <h1 class="experiance__title">85</h1>
+                                    <p class="experiance__text">Успешных проектов</p>
+                                </li>
+                                <li class="experiance__item">
+                                    <h1 class="experiance__title">15</h1>
+                                    <p class="experiance__text">Проектов в работе</p>
+                                </li>
+                                <li class="experiance__item">
+                                    <h1 class="experiance__title">95</h1>
+                                    <p class="experiance__text">Счастливых клиентов</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+
+            <section class="section container">
+                <header class="section__header">
+                    <h3 class="section__title">Статьи & Новости</h3>
+                    <div class="section__description">
+                        <p>Хорошо известно, что читатель будет отвлекаться на читабельный контент страницы</p>
+                    </div>
+                </header>
+                <div class="section__body">
+                    <news :news_card="newsCard"></news>
+                </div>
+            </section>
+        </layout>
+    </div>
+
+    <script>
+        const app = {
+            data() {
+                return {
+                    newsCard: [
+                        {
+                            id: 1,
+                            title: 'Создадим лучший макет перепланировки',
+                            description: '26 Декабрь, 2022',
+                            image: './images/articles1.png',
+                            link: '#',
+                            category: 'Дизайн Кухни'
+                        },
+                        {
+                            id: 2,
+                            title: 'Лучшие интерьерные идеи по низкой цене',
+                            description: '22 Декабрь, 2022',
+                            image: './images/articles2.png',
+                            link: '#',
+                            category: 'Дизайн Для Жизни'
+                        },
+                        {
+                            id: 3,
+                            title: 'Лучшие интерьерные решения для офисов',
+                            description: '25 Декабрь, 2022',
+                            image: './images/articles3.png',
+                            link: '#',
+                            category: 'Дизайн Интерьера'
+                        }
+                    ],
+                    modernCard: [
+                        {
+                            id: 1,
+                            title: 'Современная кухня',
+                            image: './images/kitchen1.png',
+                            link: '#',
+                            category: {
+                                label: 'Декор',
+                                link: '#',
+                                subcategory: {
+                                    label: 'Планировка',
+                                    link: '#'
+                                }
+                            }
+                        },
+                        {
+                            id: 2,
+                            title: 'Современная кухня',
+                            image: './images/kitchen2.png',
+                            link: '#',
+                            category: {
+                                label: 'Декор',
+                                link: '#',
+                                subcategory: {
+                                    label: 'Планировка',
+                                    link: '#'
+                                }
+                            }
+                        },
+                        {
+                            id: 3,
+                            title: 'Современная кухня',
+                            image: './images/kitchen3.png',
+                            link: '#',
+                            category: {
+                                label: 'Декор',
+                                link: '#',
+                                subcategory: {
+                                    label: 'Планировка',
+                                    link: '#'
+                                }
+                            }
+                        },
+                        {
+                            id: 4,
+                            title: 'Современная кухня',
+                            image: './images/kitchen4.png',
+                            link: '#',
+                            category: {
+                                label: 'Декор',
+                                link: '#',
+                                subcategory: {
+                                    label: 'Планировка',
+                                    link: '#'
+                                }
+                            }
+                        },
+                    ]
+                }
+            },
+            components: {
+                layout,
+                hero,
+                modern,
+                news,
+            }
+        }
+        Vue.createApp(app).mount('#app')
+    </script>
+</body>
+
+</html>

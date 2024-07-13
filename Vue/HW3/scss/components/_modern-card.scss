@@ -1,0 +1,33 @@
+.modern-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 27px;
+    max-width: 600px;
+    min-height: 548px;
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 20px;
+    }
+
+    &__image {
+        align-self: center;
+        object-fit: cover;
+        width: 100%;
+
+        @include mobile {
+            height: auto;
+        }
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+
+        @include hover {
+            opacity: 0.7;
+        }
+    }
+}

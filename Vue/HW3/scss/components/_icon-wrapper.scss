@@ -1,0 +1,11 @@
+.link-icon-wrapper {
+    @include flex-center;
+    @include square(70px);
+
+    background-color: var(--color-background-alt);
+    border-radius: 50%;
+
+    svg {
+        color: var(--color-font-title);
+    }
+}

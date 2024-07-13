@@ -1,0 +1,15 @@
+.quotes {
+    @include flex-center(true);
+    background-color: var(--color-background-alt);
+    flex-direction: column;
+    row-gap: 10px;
+    border-radius: var(--border-radius);
+    padding-inline: 48px;
+    padding-block: 50px;
+
+    &__text {
+        font-size: 25px;
+        color: var(--color-font-alt);
+        font-style: italic;
+    }
+}

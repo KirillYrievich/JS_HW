@@ -1,0 +1,54 @@
+.project {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    padding-bottom: 40px;
+
+    &__article {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    &__image {
+        border-radius: var(--border-radius);
+
+        @include mobile {
+            height: auto;
+        }
+    }
+
+    &__description {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        columns: 10px;
+        font-size: 16px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        list-style-type: none;
+        counter-reset: num;
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    &__item {
+        position: relative;
+
+        &:before {
+            content: counter(num) '.';
+            counter-increment: num;
+            display: inline-block;
+            position: absolute;
+            top: 0px;
+            left: -26px;
+            width: 20px;
+            color: var(--color-font-alt);
+            text-align: right;
+        }
+    }
+}
