@@ -1,0 +1,43 @@
+.section {
+    padding-block: var(--section-padding-y);
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: 93px;
+
+            @include mobile {
+                margin-bottom: 40px;
+            }
+        }
+
+        @include mobile {
+            flex-direction: column;
+            row-gap: 30px;
+        }
+    }
+
+    &__subheader {
+        margin-bottom: 30px;
+    }
+
+    &__description {
+        max-width: 470px;
+        text-align: center;
+    }
+
+    &__paginate {
+        padding-block: 50px;
+    }
+
+    &__column {
+        display: flex;
+        gap: 50px;
+    }
+}

@@ -1,0 +1,58 @@
+.footer {
+    padding-bottom: 44px;
+
+    @include desktop {
+        padding-bottom: 30px;
+    }
+
+    @include mobile {
+        padding-bottom: 15px;
+    }
+
+    &__inner {
+        align-items: start;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &-item {
+            display: inline-flex;
+            align-items: center;
+            height: 48px;
+
+            @include desktop {
+                row-gap: 10px;
+            }
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+
+            @include desktop {
+                row-gap: 10px;
+            }
+        }
+
+        &-link {
+            display: inline-flex;
+            align-items: center;
+            height: 48px;
+
+            @include hover {
+                transition-duration: inherit;
+                color: var(--color-font-alt);
+            }
+        }
+    }
+}

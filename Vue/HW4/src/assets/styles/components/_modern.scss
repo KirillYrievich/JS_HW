@@ -1,0 +1,38 @@
+.modern {
+    &__list {
+        column-gap: 100px;
+        row-gap: 56px;
+
+        @include desktop {
+            column-gap: 50px;
+            row-gap: 26px;
+        }
+
+        @include mobile {
+            column-gap: 20px;
+            row-gap: 16px;
+        }
+    }
+
+    &__item {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+
+        &:first-child article img {
+            border-top-right-radius: var(--button-arrow-large);
+        }
+
+        &:nth-child(2) article img {
+            border-top-left-radius: var(--button-arrow-large);
+        }
+
+        &:nth-child(3) article img {
+            border-bottom-right-radius: var(--button-arrow-large);
+        }
+
+        &:last-child article img {
+            border-bottom-left-radius: var(--button-arrow-large);
+        }
+    }
+}

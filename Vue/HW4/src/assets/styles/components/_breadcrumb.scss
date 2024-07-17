@@ -1,0 +1,27 @@
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    & li {
+        &::after {
+            content: "/";
+            margin-left: 10px;
+        }
+
+        &:last-child::after {
+            content: none;
+        }
+    }
+
+    &__link {
+        border-bottom: 1px solid var(--color-background);
+        display: inline-block;
+
+        @include hover {
+            transition-duration: inherit;
+            border-bottom: 1px solid var(--color-font-alt);
+            color: var(--color-font-alt);
+        }
+    }
+}
