@@ -1,0 +1,37 @@
+.modern {
+  &__list {
+    column-count: 2;
+
+    @include desktop {
+      grid-gap: 20px;
+    }
+
+    @include mobile {
+      grid-gap: 16px;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__rounded {
+    &:first-child article img {
+      border-top-right-radius: var(--button-arrow-large);
+    }
+
+    &:nth-child(2) article img {
+      border-top-left-radius: var(--button-arrow-large);
+    }
+
+    &:nth-child(3) article img {
+      border-bottom-right-radius: var(--button-arrow-large);
+    }
+
+    &:last-child article img {
+      border-bottom-left-radius: var(--button-arrow-large);
+    }
+  }
+}
