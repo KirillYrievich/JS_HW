@@ -1,0 +1,44 @@
+.experiance {
+    background-color: var(--color-background-alt);
+
+    &__list {
+        padding-top: 150px;
+        padding-bottom: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include tablet {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        @include mobile {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            flex-direction: column;
+            row-gap: 30px;
+        }
+    }
+
+    &__item {
+        width: 292px;
+
+        @include mobile {
+            border: 1px solid var(--color-font-alt);
+        }
+
+        &:not(:last-child) {
+            border-right: 1px solid var(--color-font-alt);
+        }
+    }
+
+    &__title {
+        color: var(--color-font-alt);
+        text-align: center;
+    }
+
+    &__text {
+        text-align: center;
+    }
+}
