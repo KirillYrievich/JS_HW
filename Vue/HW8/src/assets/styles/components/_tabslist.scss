@@ -1,0 +1,30 @@
+.tabslist {
+  border: 1px solid var(--color-font-alt);
+  border-radius: var(--border-radius-button);
+  width: fit-content;
+  margin: auto;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__button {
+    height: auto;
+    padding-inline: 66px;
+    padding-block: 26px;
+    color: var(--color-font-title);
+    background-color: var(--color-background);
+    border: none;
+
+    @include hover {
+      color: var(--color-font-text);
+      background-color: var(--color-border);
+    }
+  }
+
+  &__active {
+    color: var(--color-background);
+    background-color: var(--color-font-alt);
+  }
+}

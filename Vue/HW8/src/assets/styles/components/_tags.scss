@@ -1,0 +1,30 @@
+.tags {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    width: 345px;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    &__button {
+        height: auto;
+        padding-inline: 30px;
+        padding-block: 9px;
+        color: var(--color-font-title);
+        background-color: var(--color-background-alt);
+
+        @include hover {
+            color: var(--color-background);
+            background-color: var(--color-font-title);
+        }
+    }
+
+    &__active {
+        color: var(--color-background);
+        background-color: var(--color-font-title);
+    }
+}

@@ -1,0 +1,46 @@
+.not-found {
+  height: 758px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 18px;
+  align-items: start;
+
+  @include tablet {
+    height: 600px;
+  }
+
+  @include mobile {
+    height: 400px;
+  }
+
+  &__title {
+    color: var(--color-font-alt);
+    font-size: 250px;
+    line-height: 0.7;
+  }
+
+  &__description {
+    font-size: 35px;
+    line-height: 1.4;
+    max-width: 569px;
+  }
+}
+
+.not-found-bg {
+  background-image: url('@/assets/img/404.jpeg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+.not-found__arrow {
+  stroke: var(--color-font-alt);
+  transition-duration: inherit;
+  margin-left: 10px;
+}
+
+.button:hover .not-found__arrow {
+  stroke: var(--color-background);
+}
