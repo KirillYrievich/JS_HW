@@ -6,6 +6,19 @@
 */
 
 const post = {
+
+  printProperties() {
+
+    console.log(this.author);
+
+    for (const item of this.comments) {
+      console.log(item.rating.dislikes);
+      console.log(item.userId);
+      console.log(item.text);
+    };
+
+  },
+
   author: "John", // вывести этот текст
   postId: 23,
   comments: [
@@ -30,4 +43,4 @@ const post = {
   ],
 };
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+post.printProperties();
