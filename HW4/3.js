@@ -14,4 +14,37 @@
 не окажется, значит нужно будет вывести пустой массив.
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+function generateArray(length) {
+    const array = [];
+    for (let index = 0; index < length; index++) {
+        array.push(Math.floor(Math.random() * 10));
+    };
+    return array;
+};
+
+function main() {
+    const array = generateArray(5);
+    const result = [];
+
+    const sum = array.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
+    }, 0);
+
+    const minValue = Math.min(...array);
+
+    (function indexOfThree(array, result) {
+        for (let index = 0; index < array.length; index++) {
+            if (array[index] === 3) {
+                result.push(index);
+            };
+        };
+        return result;
+    })(array, result);
+
+    console.log("Сгенерированный массив:", array);
+    console.log("Сумма элементов массива:", sum);
+    console.log("Минимальное значение в массиве:", minValue);
+    console.log("Массив индексов со значением 3:", result);
+};
+
+main();
