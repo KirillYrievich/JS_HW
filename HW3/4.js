@@ -18,4 +18,24 @@ console.log(sum(2, 6)); должно вывести число 8 в консол
 Демонстрировать работы функций не обязательно.
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+
+const sum = (a, b) => {
+    return a + b;
+};
+
+function difference(a, b) {
+    return (a > b) ? a - b : b - a;
+};
+
+const multiplication = (a, b) => {
+    return a * b;
+};
+
+const division = (a, b) => {
+    return (b === 0) ? console.log('Деление на ноль невозможно') : a / b;
+};
+
+console.log(sum(2, 6));
+console.log(difference(2, 6));
+console.log(multiplication(2, 6));
+console.log(division(2, 6));

@@ -7,4 +7,13 @@
 который получаем от функции, в консоль.
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+
+function cubeOfNumber(n) {
+    return function () {
+        return n ** 3;
+    };
+};
+
+let result = cubeOfNumber(3);
+
+console.log(result());
